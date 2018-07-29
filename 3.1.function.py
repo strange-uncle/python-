@@ -12,8 +12,8 @@ print(a(y=3))
 print(a())
 
 #return要单独用一行,不能如下这样搞
-#如下会返回<class 'NoneType'>
-print('小心return')
+#因为LIST是可变对象,如下会返回<class 'NoneType'>
+print('小心可变对象的return')
 def wrong_fun(L=[]):
     return L.append('a')
 
@@ -57,6 +57,20 @@ def sum_tuple2(*tp):
 print(sum_tuple2())
 print(sum_tuple2(1, 2))
 print(sum_tuple2(1, 2, 3))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
