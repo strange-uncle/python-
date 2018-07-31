@@ -18,19 +18,18 @@ print(t, type(t))
 t2 = (1,)
 print(t2, type(t2))
 
-#tuple里面元素的指向是不能修改的
-#'tuple' object does not support item assignment
+# tuple里面元素的指向是不能修改的
+# 'tuple' object does not support item assignment
 l2 = [123,456]
 
 print('tuple里面元素的指向是不能修改的')
 t3 = ('a',123, l2)
 
 print(t3)
-#tuple指向l2是没有改变的,但l2内部的数据可以改变
-#注意,是str是不可变对象, list才是可变对象
+# tuple指向l2是没有改变的,但l2内部的数据可以改变
+# 注意,是str是不可变对象, list才是可变对象
 l2[1] = '666'
 print(t3)
-
 
 
 # 请用索引取出下面list的指定元素：
