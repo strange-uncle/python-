@@ -52,3 +52,23 @@ is_palindromic_number('1234567')
 is_palindromic_number('1234567654321')
 is_palindromic_number('226699')
 is_palindromic_number('223322')
+
+# 函数作用域
+def f1():
+	b = 'bbb'
+	
+	def bar():
+		c = 'ccc'
+		# print(a)
+		print(b)
+		print(c)
+	
+	bar()
+
+if __name__ == '__main__':
+	b = 123
+	f1()
+	print(b)
+
+
+
