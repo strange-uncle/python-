@@ -23,8 +23,11 @@ def print_test_txt():
 
 
 def read_write():
-    with open('E:\\Github\\practise_file_operation\\中文目录\\test.txt', 'r+') as f:
+    with open('E:\\Github\\practise_file_operation\\中文目录\\test2.txt', 'r+') as f:
         print(f.readlines())
+        f.seek(0)
+        print(f.read())
+        f.seek(0)
         f.write('666')
 
  
@@ -33,7 +36,7 @@ def w_plus():
         f.write('999')
          
 
-# a+是append下的读写模式. 和r+不同的是， a+在读取文件的时候会把读取指针放到文件末尾，
+# a+是append下的读写模式. 和r+不同的是， a+在读取文件的时候会把文件指针放到文件末尾，
 # 所以需要调用seek来移动文件的读取指针到第一个位置，然后才能读取出前面的内容
 def append_plus():
     with open('E:\\Github\\practise_file_operation\\中文目录\\test.txt', 'a+') as f:
@@ -42,9 +45,9 @@ def append_plus():
         f.read()
         f.seek(0)
         print(f.readlines())
-        # seek移动的是文件读取指针，不会影响写入操作
-        f.seek(2)
-        f.write('123465')
+        # seek移动文件指针，影响了接下来的写入操作
+        f.seek(0)
+        f.write('999')
 
 
 # as a means append, so get error: UnsupportedOperation: not readable
@@ -53,12 +56,23 @@ def append_read():
         print(f.readlines())
   
 
+def replace_pic():
+    with open('E:\Github\practise_file_operation\中文目录\A.jpg','wb') as f1:
+        with open('E:\Github\practise_file_operation\中文目录\B.jpg', 'rb') as f2:
+            d2 = f2.read()
+        f1.write(d2)
+    
+    
 if __name__ == '__main__':
     # read1()
     # read2()
     # read3()
     # read_write()
     # w_plus()
-    append_plus()
-    print_test_txt()
+    # append_plus()
+    # read_write()
+    # append_plus()
+    # print_test_txt()
     # append_read()
+    # replace_pic()
+    pass
