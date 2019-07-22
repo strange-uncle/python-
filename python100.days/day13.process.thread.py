@@ -7,7 +7,7 @@ from time import time, sleep
 def download_task(name):
     print('启动下载进程，pid is %d' % getpid())
     print('开始下载 %s' % name)
-    cost_time = randint(5,10)
+    cost_time = randint(5, 10)
     sleep(cost_time)
     print('文件[%s]下载完成，耗时%d秒' % (name, cost_time))
     
