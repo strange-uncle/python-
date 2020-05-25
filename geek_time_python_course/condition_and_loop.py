@@ -46,4 +46,6 @@ for i,v in enumerate(st):
 for i in list(st):
     print(f'list from set, item is {i}')
 
-
+print('test filter(None, )')
+l = [1,0,'', ' ', True, False, [], [0,-1,1,False,2]]
+print(list(filter(None,l)))
